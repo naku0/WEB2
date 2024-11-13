@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background-color: #f4f4f4; /* Мягкий светло-серый для фона */
+    --primary-text-color: #2a2a2a; /* Темный, насыщенный серый для основного текста */
+    --secondary-text-color: #595959; /* Средне-серый для второстепенного текста */
+    --accent-color: #8c8c8c; /* Нейтральный серый акцентный цвет для кнопок и ссылок */
+    --border-color: #d1d1d1; /* Светло-серый для границ и разделений */
+    --highlight-color: #e8e8e8; /* Очень светлый серый для выделенных элементов */
+    --button-background: #3e3e3e; /* Глубокий серый для кнопок */
+    --button-text-color: #ffffff; /* Белый цвет текста на кнопках */
+}
+
+html{
+    scroll-behavior: smooth;
+    height: 100vh;
+    width: 100vw;
+}
+
+header{
+    display: flex;
+    place-content: flex-end;
+    align-items: center;
+    font-weight: bold;
+    padding: 20px;
+    width: 100%;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
+    font-family: 'Arial', sans-serif;
+    line-height: 1.5;
+    accent-color: var(--button-background);
+    letter-spacing: 0.15em;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.main-info{
+    display: flex;
+    place-content: space-evenly;
+    align-items: center;
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
+    width: 100%;
+}
+
+.graph {
+    width: 400px;
+    height: 400px;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    width: 100%;
+}
+
+.x, .r{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.x label, .r label{
+    margin: 10px;
+}
+
+.y-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.y-container input {
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
+    z-index: 1;
+    padding: 10px 10px 10px 30px;
+}
+
+.y-container label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-125%);
+    z-index: 1;
+    color: var(--secondary-text-color);
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.y-container p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transform: translateX(100%);
+    color: var(--secondary-text-color);
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+    z-index: 0;
+    opacity: 0;
+}
+
+.y-container input:focus ~ label,
+.y-container input:valid ~ label {
+    top: 0;
+    left: 0;
+    color: var(--button-background);
+    transform: translateX(50%);
+}
+
+.y-container input:focus ~ p,
+.y-container input:valid ~ p {
+    top: 0;
+    left: 0;
+    color: var(--button-background);
+    transform: translateX(-125%);
+    opacity: 1;
+}
+
+.sendDataButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: var(--button-background);
+    color: var(--button-text-color);
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+table{
+    padding: 40px;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    max-height: 400px;
+    overflow: scroll;
+}
+
+th, td{
+    border: 1px solid var(--border-color);
+    padding: 10px;
+}
+
